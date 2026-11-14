@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>螢火蟲作品｜Harvey 的小天地</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="inner">
+      <a class="logo" href="index.html">🌿 Harvey 的小天地</a>
+      <nav>
+        <a href="index.html">首頁</a>
+        <a href="mung-bean-diary.html">綠豆發芽日記</a>
+        <a href="firefly.html">螢火蟲作品</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero hero-night">
+      <div class="emoji">✨🐛✨</div>
+      <h1>會發光的螢火蟲盒子</h1>
+      <p>作者：Harvey　｜　製作日期：2026 年 10 月 30 日、11 月 6 日</p>
+    </section>
+
+    <!-- 互動開關：用真的照片切換亮燈 / 沒亮燈 -->
+    <section class="ff-demo">
+      <h2>🔘 按按看！螢火蟲的燈</h2>
+      <p class="ff-hint">我的盒子裡面有一個小開關，按一按可以換不同的燈：</p>
+      <div class="ff-stage" id="ff-stage" data-mode="slow">
+        <img class="ff-off" src="images/firefly-off.jpg" alt="螢火蟲作品，沒開燈">
+        <img class="ff-on" src="images/firefly-on.jpg" alt="螢火蟲作品，燈亮了">
+      </div>
+      <div class="ff-buttons" id="ff-buttons">
+        <button data-mode="fast">⚡ 閃很快</button>
+        <button data-mode="slow" class="active">🌙 閃很慢</button>
+        <button data-mode="on">💡 不閃</button>
+        <button data-mode="off">⏻ 關掉</button>
+      </div>
+    </section>
+
+    <h2>🛠️ 我是怎麼做的</h2>
+    <ol class="steps">
+      <li>
+        <span class="step-emoji">🖌️</span>
+        <div>
+          <h3>把盒子塗成黑色</h3>
+          <p>用水彩筆把盒子塗成黑色，看起來像晚上。（盒蓋塗成綠色，像草地。）</p>
+        </div>
+      </li>
+      <li>
+        <span class="step-emoji">✂️</span>
+        <div>
+          <h3>做紙螢火蟲</h3>
+          <p>在紙上畫螢火蟲，用橘色的筆畫，再把它剪下來。</p>
+        </div>
+      </li>
+      <li>
+        <span class="step-emoji">💡</span>
+        <div>
+          <h3>放上小燈、吊起來</h3>
+          <p>老師給我們一串小小的燈。把小燈放在螢火蟲的後面，再把螢火蟲吊在盒子上。</p>
+        </div>
+      </li>
+      <li>
+        <span class="step-emoji">🌊</span>
+        <div>
+          <h3>做一個海</h3>
+          <p>用藍色的紙把它折得爛爛的，就變成海了。</p>
+        </div>
+      </li>
+      <li>
+        <span class="step-emoji">🌿</span>
+        <div>
+          <h3>做草</h3>
+          <p>用綠色的紙對折，然後剪剪剪，剪成尖尖的，草就好了！</p>
+        </div>
+      </li>
+      <li>
+        <span class="step-emoji">🔘</span>
+        <div>
+          <h3>開燈！</h3>
+          <p>盒子後面有一個小燈，裡面有一個小開關。按一按可以變成不同的燈：閃很快、閃很慢、不閃，還有關掉。</p>
+        </div>
+      </li>
+    </ol>
+
+    <h2>📸 作品照片</h2>
+    <div class="photo-pair">
+      <figure>
+        <img src="images/firefly-off.jpg" alt="螢火蟲作品，沒開燈" data-zoom>
+        <figcaption>沒開燈</figcaption>
+      </figure>
+      <figure>
+        <img src="images/firefly-on.jpg" alt="螢火蟲作品，燈亮了" data-zoom>
+        <figcaption>燈亮了 ✨</figcaption>
+      </figure>
+    </div>
+  </main>
+
+  <div class="lightbox" id="lightbox" hidden><img alt=""></div>
+
+  <footer>© Harvey 的小天地</footer>
+
+  <script>
+    // 開關按鈕：切換燈的模式
+    (function () {
+      var stage = document.getElementById('ff-stage');
+      var buttons = document.querySelectorAll('#ff-buttons button');
+      buttons.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          stage.dataset.mode = btn.dataset.mode;
+          buttons.forEach(function (b) { b.classList.toggle('active', b === btn); });
+        });
+      });
+    })();
+
+    // 點照片放大，再點一下關閉
+    (function () {
+      var box = document.getElementById('lightbox');
+      var big = box.querySelector('img');
+      document.querySelectorAll('img[data-zoom]').forEach(function (img) {
+        img.addEventListener('click', function () {
+          big.src = img.src;
+          big.alt = img.alt;
+          box.hidden = false;
+        });
+      });
+      box.addEventListener('click', function () { box.hidden = true; });
+      document.addEventListener('keydown', function (e) { if (e.key === 'Escape') box.hidden = true; });
+    })();
+  </script>
+</body>
+</html>
