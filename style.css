@@ -49,6 +49,8 @@ a { color: var(--green-dark); }
   text-decoration: none;
   margin-left: 16px;
   font-weight: 500;
+  white-space: nowrap;
+  display: inline-block;
 }
 .site-header nav a:hover { text-decoration: underline; }
 
@@ -442,15 +444,15 @@ img[data-zoom] { cursor: zoom-in; }
 .super-love .love { font-weight: 700; color: #d63a5c; font-size: 1.1rem; }
 .sour .love { font-weight: 700; color: #b58a00; }
 
-.wide-photo { margin: 0 auto 32px; max-width: 360px; text-align: center; }
-.wide-photo img { width: 100%; border-radius: 16px; display: block; }
-.wide-photo figcaption { color: var(--muted); margin-top: 6px; }
+.food-card img.focus-top { object-position: center 42%; }
 
-.fun-find { background: #fff4e6; }
-.fun-find h2 { color: #b8432f; }
-.fun-row { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; }
-.fun-row img { width: 220px; max-width: 100%; border-radius: 12px; }
-.fun-row p { flex: 1 1 200px; margin: 0; }
+/* 好好笑的發現：寬螢幕時照片在左、文字在右 */
+.fun-card { margin-bottom: 32px; }
+@media (min-width: 640px) {
+  .fun-card { flex-direction: row; align-items: stretch; }
+  .fun-card img { width: 45%; aspect-ratio: auto; min-height: 220px; }
+  .fun-card .food-body { flex: 1; display: flex; flex-direction: column; justify-content: center; padding: 20px 24px; }
+}
 
 /* ---------- 朗讀按鈕 ---------- */
 .tts-btn {
@@ -472,8 +474,8 @@ img[data-zoom] { cursor: zoom-in; }
 .tts-reading { outline: 3px solid #ffd54a; outline-offset: 2px; }
 .hero-night .tts-btn, .ff-demo .tts-btn { border-color: #ffe27a; background: transparent; color: #ffe27a; }
 .hero-night .tts-btn.playing, .ff-demo .tts-btn.playing { background: #ffe27a; color: #141b2b; }
-.hero-food .tts-btn, .food-card .tts-btn, .food-box .tts-btn, .fun-find .tts-btn { border-color: #e0794f; color: #b8432f; }
-.food-card .tts-btn.playing, .hero-food .tts-btn.playing, .food-box .tts-btn.playing, .fun-find .tts-btn.playing { background: #e0794f; color: #fff; }
+.hero-food .tts-btn, .food-card .tts-btn, .food-box .tts-btn { border-color: #e0794f; color: #b8432f; }
+.food-card .tts-btn.playing, .hero-food .tts-btn.playing, .food-box .tts-btn.playing { background: #e0794f; color: #fff; }
 
 @media (prefers-reduced-motion: reduce) {
   .ff-stage[data-mode="fast"] .ff-on { animation-duration: 1.2s; }
