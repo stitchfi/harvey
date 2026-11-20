@@ -452,6 +452,29 @@ img[data-zoom] { cursor: zoom-in; }
 .fun-row img { width: 220px; max-width: 100%; border-radius: 12px; }
 .fun-row p { flex: 1 1 200px; margin: 0; }
 
+/* ---------- 朗讀按鈕 ---------- */
+.tts-btn {
+  font: inherit;
+  font-size: 0.85rem;
+  font-weight: 700;
+  vertical-align: middle;
+  margin-left: 8px;
+  padding: 2px 12px;
+  border-radius: 999px;
+  border: 2px solid var(--green);
+  background: #fff;
+  color: var(--green-dark);
+  cursor: pointer;
+  white-space: nowrap;
+}
+.tts-btn:hover { background: var(--green-light); }
+.tts-btn.playing { background: var(--green); color: #fff; }
+.tts-reading { outline: 3px solid #ffd54a; outline-offset: 2px; }
+.hero-night .tts-btn, .ff-demo .tts-btn { border-color: #ffe27a; background: transparent; color: #ffe27a; }
+.hero-night .tts-btn.playing, .ff-demo .tts-btn.playing { background: #ffe27a; color: #141b2b; }
+.hero-food .tts-btn, .food-card .tts-btn, .food-box .tts-btn, .fun-find .tts-btn { border-color: #e0794f; color: #b8432f; }
+.food-card .tts-btn.playing, .hero-food .tts-btn.playing, .food-box .tts-btn.playing, .fun-find .tts-btn.playing { background: #e0794f; color: #fff; }
+
 @media (prefers-reduced-motion: reduce) {
   .ff-stage[data-mode="fast"] .ff-on { animation-duration: 1.2s; }
 }
