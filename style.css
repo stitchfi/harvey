@@ -445,6 +445,8 @@ img[data-zoom] { cursor: zoom-in; }
 .sour .love { font-weight: 700; color: #b58a00; }
 
 .food-card img.focus-top { object-position: center 42%; }
+.img-crop { overflow: hidden; }
+.img-crop img.zoom-clams { transform: scale(2.3) translate(19%, -18%); }
 
 /* 好好笑的發現：寬螢幕時照片在左、文字在右 */
 .fun-card { margin-bottom: 32px; }

@@ -6,7 +6,7 @@
   <title>義大利麵餐廳｜Harvey 的小天地</title>
   <!-- 改了 style.css 或 read-aloud.js 時，要把 ?v= 後面的版本號一起改掉，瀏覽器才會抓新的檔案 -->
   <style>img{max-width:100%;height:auto}</style>
-  <link rel="stylesheet" href="style.css?v=20261120b">
+  <link rel="stylesheet" href="style.css?v=20261120c">
 </head>
 <body>
   <header class="site-header">
@@ -57,17 +57,17 @@
         </div>
       </article>
 
-      <article class="food-card no-img">
-        <div class="food-emoji">🍝🦪</div>
+      <article class="food-card">
+        <img src="images/bellini-pasta.jpg" alt="有淡菜、蛤蜊和蝦子的義大利麵" data-zoom>
         <div class="food-body">
           <h3>🍝 義大利麵</h3>
           <div class="love">❤️❤️❤️❤️❤️</div>
-          <p>義大利麵很甜！裡面有淡菜，我很喜歡吃淡菜。</p>
+          <p>義大利麵很甜！裡面有淡菜，我很喜歡吃淡菜。黑黑長長的就是淡菜，還有蛤蜊和蝦子！</p>
         </div>
       </article>
 
-      <article class="food-card no-img super-love">
-        <div class="food-emoji">🐚</div>
+      <article class="food-card super-love">
+        <div class="img-crop"><img class="zoom-clams" src="images/bellini-pasta.jpg" alt="義大利麵裡的蛤蜊" data-zoom></div>
         <div class="food-body">
           <h3>🐚 蛤蜊</h3>
           <div class="love">💯 一百喜歡！</div>
@@ -155,6 +155,6 @@
       document.addEventListener('keydown', function (e) { if (e.key === 'Escape') box.hidden = true; });
     })();
   </script>
-  <script src="read-aloud.js?v=20261120b"></script>
+  <script src="read-aloud.js?v=20261120c"></script>
 </body>
 </html>
