@@ -396,6 +396,62 @@ img[data-zoom] { cursor: zoom-in; }
 .photo-pair img { width: 100%; border-radius: 12px; display: block; }
 .photo-pair figcaption { color: var(--muted); margin-top: 6px; }
 
+/* ---------- 義大利麵餐廳 ---------- */
+.hero-food { background: linear-gradient(135deg, #fff1e0, #ffe0d6); }
+.hero-food h1 { color: #b8432f; }
+.food-box { border-left-color: #e0794f; }
+.food-box h2 { color: #b8432f; }
+.day-route { list-style: none; padding: 0; margin: 0; }
+.day-route li { display: flex; gap: 10px; align-items: center; padding: 4px 0; }
+.day-route span { font-size: 1.5rem; }
+
+.food-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 20px;
+  margin-bottom: 32px;
+}
+.food-card {
+  background: var(--card);
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.food-card img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  display: block;
+}
+.food-emoji {
+  aspect-ratio: 4 / 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 4rem;
+  background: #fff4e6;
+}
+.food-body { padding: 14px 16px 16px; }
+.food-body h3 { margin: 0 0 4px; color: #b8432f; }
+.food-body p { margin: 6px 0 0; }
+.love { font-size: 0.95rem; }
+.super-love { outline: 3px solid #ff9db0; }
+.super-love .food-emoji { background: #ffe6ec; }
+.super-love .love { font-weight: 700; color: #d63a5c; font-size: 1.1rem; }
+.sour .love { font-weight: 700; color: #b58a00; }
+
+.wide-photo { margin: 0 auto 32px; max-width: 360px; text-align: center; }
+.wide-photo img { width: 100%; border-radius: 16px; display: block; }
+.wide-photo figcaption { color: var(--muted); margin-top: 6px; }
+
+.fun-find { background: #fff4e6; }
+.fun-find h2 { color: #b8432f; }
+.fun-row { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; }
+.fun-row img { width: 220px; max-width: 100%; border-radius: 12px; }
+.fun-row p { flex: 1 1 200px; margin: 0; }
+
 @media (prefers-reduced-motion: reduce) {
   .ff-stage[data-mode="fast"] .ff-on { animation-duration: 1.2s; }
 }
